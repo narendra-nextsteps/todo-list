@@ -2,7 +2,7 @@
     padding: 15px;
     font-size: 16px;
     border: 2px solid #FFF;
-    width: 165px;
+    width: 170px;
     border-radius: 5px;
   }
   .todoListMain .header button {
@@ -23,7 +23,7 @@
   .todoListMain .theList {
     list-style: none;
     padding-left: 0;
-    width: 250px;
+    width: 290px;
     font-size: 20px;
   } 
   ul.theList {
@@ -34,10 +34,14 @@
     color: #333;
     background-color: rgba(255,255,255,.5);
     padding: 15px;
+    height: 25;
     margin-bottom: 15px;
     border-radius: 5px;
     text-transform: capitalize;
     transition: background-color .2s ease-out;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   .todoListMain .theList li span{
