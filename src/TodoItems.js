@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa/";
 
 function TodoItems (props) {
 
@@ -9,7 +10,12 @@ function TodoItems (props) {
 
   var todoEntries = props.entries;
   var listItems = todoEntries.map((item, index) => (
-    <li onClick={() => deleteItem(item.key, index)} key={item.key}>{item.text}</li>
+    <li key={item.key}>
+      {item.text} 
+      <span onClick={() => deleteItem(item.key, index)}>
+        <FaTrash />
+      </span>
+    </li>
   ));
 
   return (

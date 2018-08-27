@@ -36,8 +36,16 @@
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
-   
+    text-transform: capitalize;
     transition: background-color .2s ease-out;
+  }
+
+  .todoListMain .theList li span{
+    float: right;
+  }
+
+  .todoListMain .theList li span:hover {
+    color: red;    
   }
    
   .todoListMain .theList li:hover {
