@@ -11,11 +11,11 @@ class TodoList extends Component {
     };
     this.addItem = this.addItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.deleteItem = this.deleteItem.bind(this)
   }
 
   handleChange(event) {
     const value = event.target.value
-
     this.setState({inputVal: value})
   }
 
@@ -39,6 +39,12 @@ class TodoList extends Component {
  
   }
 
+  deleteItem(index) {
+    const items = [...this.state.items]
+    items.splice(index, 1)
+    this.setState({ items: items})
+  }
+
   render() {
   console.log(this.state.items.join())
     return (
@@ -49,7 +55,7 @@ class TodoList extends Component {
             <button type="submit">add</button>
           </form>
         </div>
-        <TodoItems entries={this.state.items}/>
+        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
       </div>
     );
   }
