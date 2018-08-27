@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa/";
+import FlipMove from "react-flip-move";
 
 function TodoItems (props) {
 
@@ -20,7 +21,9 @@ function TodoItems (props) {
 
   return (
     <ul className="theList">
+      <FlipMove >
         {listItems}
+      </FlipMove>
     </ul>
   );
 };
