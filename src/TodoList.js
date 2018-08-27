@@ -29,10 +29,10 @@ class TodoList extends Component {
    
       this.setState((prevState) => {
         return { 
-          items: prevState.items.concat(newItem) 
+          items: prevState.items.concat(newItem),
+          inputVal: ""
         };
       });
-      this.state.inputVal = "";
     }
     console.log(this.state.items);
     event.preventDefault();  
