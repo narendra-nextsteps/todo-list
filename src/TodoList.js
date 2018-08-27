@@ -45,20 +45,20 @@ class TodoList extends Component {
     this.setState({ items: items})
   }
 
-  render() {
+  render() {
   console.log(this.state.items.join())
-    return (
-      <div className="todoListMain">
-        <div className="header">
-          <form onSubmit={this.addItem}>
-            <input placeholder="enter task" value={this.state.inputVal} onChange={this.handleChange}/>
-            <button type="submit">add</button>
-          </form>
-        </div>
-        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
-      </div>
-    );
-  }
+    return (
+      <div className="todoListMain">
+        <div className="header">
+          <form onSubmit={this.addItem}>
+            <input placeholder="enter task" value={this.state.inputVal} onChange={this.handleChange}/>
+            <button type="submit">add</button>
+          </form>
+        </div>
+        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+      </div>
+    );
+  }
 }
- 
+
 export default TodoList;
