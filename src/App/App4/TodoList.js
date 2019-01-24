@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TodoItems from './TodoItems'
-import "./TodoList.css"
+import "../../TodoList.css"
+import TodoItems from "./TodoItems"
 
 class TodoList extends Component {
   constructor(props) {
@@ -11,7 +11,6 @@ class TodoList extends Component {
     };
     this.addItem = this.addItem.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.deleteItem = this.deleteItem.bind(this)
   }
 
   handleChange(event) {
@@ -27,26 +26,25 @@ class TodoList extends Component {
         key: Date.now()
       };
 
-      this.setState((prevState) => {
-        return {
-          items: prevState.items.concat(newItem),
-          inputVal: ""
-        };
-      });
+      // this.setState((prevState) => {
+      //   return {
+      //     items: prevState.items.concat(newItem), // [...prevState.items, newItem],
+      //     inputVal: ""
+      //   };
+      // });
+
+      this.setState({
+        items: [...this.state.items, newItem],
+        inputVal: ""
+      }, ()=> console.log(this.state.items))
     }
-    console.log(this.state.items);
+
+    // console.log(this.state.items);
     event.preventDefault();
-
   }
 
-  deleteItem(index) {
-    const items = [...this.state.items]
-    items.splice(index, 1)
-    this.setState({ items: items})
-  }
 
   render() {
-  console.log(this.state.items.join())
     return (
       <div className="todoListMain">
         <h2 style={{color: 'white', textAlign: 'center'}}>ToDo List</h2>
@@ -56,7 +54,7 @@ class TodoList extends Component {
             <button type="submit">add</button>
           </form>
         </div>
-        <TodoItems entries={this.state.items} deleteItem={this.deleteItem} />
+        <TodoItems entries={this.state.items} />
       </div>
     );
   }
