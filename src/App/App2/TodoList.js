@@ -12,7 +12,7 @@ class TodoList extends Component {
      * to undefined in strict mode(JS class or modules by default run in
      * strict mode).
      */
-    this.handleChange = this.handleChange.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   // handleChange(event) {
@@ -28,7 +28,7 @@ class TodoList extends Component {
 
   handleChange = event => {
     const value = event.target.value
-    this.setState({inputVal: value}, ()=>console.log(this.state.inputVal))
+    this.setState({inputVal: value}, ()=>console.log(this.state.inputVal, event))
   }
 
   render() {

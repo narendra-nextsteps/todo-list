@@ -4,7 +4,7 @@ import FlipMove from "react-flip-move";
 
 function TodoItems (props) {
 
-  const deleteItem = (key, index) => {
+  const del = (key, index) => {
     console.log(index, key)
     props.deleteItem(index)
   }
@@ -13,7 +13,7 @@ function TodoItems (props) {
   var listItems = todoEntries.map((item, index) => (
     <li key={item.key}>
       {item.text}
-      <span onClick={() => deleteItem(item.key, index)}>
+      <span onClick={() => del(item.key, index)}>
         <FaTrash />
       </span>
     </li>
